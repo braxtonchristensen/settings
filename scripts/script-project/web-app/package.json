@@ -1,0 +1,47 @@
+{
+  "name": "%substitute_project_name",
+  "scripts": {
+    "dev:build": "next",
+    "dev:test": "yarn test -- --watch",
+    "verify": "yarn test && yarn lint && yarn build",
+    "test": "jest .",
+    "lint": "eslint .",
+    "build": "next build",
+    "release": "git checkout master && git pull && now",
+    "start": "next start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "plugins": [
+      "react"
+    ],
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true,
+      "browser": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "react/display-name": [
+        "off"
+      ],
+      "react/prop-types": [
+        "off"
+      ]
+    }
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}

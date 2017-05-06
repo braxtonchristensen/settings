@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euo pipefail
+
+task="Reverting terminal and editor settings to normal"
+
+script-log state "$task"
+
+cd "$HOME"/drive/settings/dotfiles
+git checkout .hyper.js .vimrc
+
+sleep 3
+clear
+
+script-log state "DONE $task"

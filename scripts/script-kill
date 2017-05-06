@@ -1,0 +1,18 @@
+#!/bin/bash
+set -euo pipefail
+
+task="Killing processes"
+
+script-log state "$task"
+
+# NODE SERVERS
+killall node || true
+
+# TMUX SERVERS
+tmux kill-server || true
+
+# EGGHEAD-RAILS
+brew services stop postgresql || true
+redis-cli shutdown || true
+
+script-log state "DONE $task"

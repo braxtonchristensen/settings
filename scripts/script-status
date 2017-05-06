@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+
+task="Checking status of all git repos"
+
+script-log state "$task"
+
+cd "$HOME"/drive
+find . -path "*/.git" -print -execdir git status ";"
+
+script-log state "DONE $task"
