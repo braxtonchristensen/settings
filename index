@@ -14,7 +14,6 @@ homebrew_packages=(
   "node"
   "vim"
   "yarn"
-  "zsh"
   "openssl"
   "rethinkdb"
 )
@@ -69,6 +68,7 @@ atom_packages=(
 # ==================================================================
 
 echo "Making zsh the default shell"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /usr/local/bin/zsh
 
 
