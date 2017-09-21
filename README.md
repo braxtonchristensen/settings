@@ -12,6 +12,7 @@ Braxton's settings
 
 _Most things are taken care of automatically with the set up script ^, but some manual items are needed:_
 
+- iterm2 colors file can be found in dotfiles
 - iCloud (disable everything except Find My Mac, Keychain, Photos, and Messages inside iCloud Drive)
 - Remove all dock icons
 - Dock auto hide (on)
