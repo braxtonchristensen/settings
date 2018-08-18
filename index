@@ -17,6 +17,7 @@ homebrew_packages=(
   "zsh"
   "openssl"
   "rethinkdb"
+  "mongodb"
 )
 
 ruby_gems=(
@@ -24,19 +25,22 @@ ruby_gems=(
 )
 
 fonts=(
+  "font-fira-code"
   "font-fira-mono"
   "font-quicksand"
 )
 
 homebrew_cask_apps=(
-  "1password"
+  "lastpass"
   "google-chrome"
   "google-drive"
   "google-photos-backup"
   "hyper"
+  "iterm2"
   "rescuetime"
   "flux"
-  "atom"
+  "visual-studio-code-insiders"
+  "marshallofsound-google-play-music-player"
 )
 
 mac_app_store_apps=(
@@ -48,28 +52,21 @@ mac_app_store_apps=(
   "451444120" # Memory Clean
 )
 
-atom_packages=(
-  "atom-beautify"
-  "color-picker"
-  "emmet"
-  "file-icons"
-  "language-javascript-jsx"
-  "linter-eslint"
-  "minimap"
-  "pigments"
-  "language-babel"
-  "nova-atom-ui"
-  "nova-atom-syntax"
-  "wakatime"
+vscode_packages=(
+  "streetsidesoftware.code-spell-checker"
+  "ms-vsliveshare.vsliveshare"
+  "wakatime.vscode-wakatime"
+  "rebornix.nova"
+  "whtouche.vscode-js-console-utils"
+  "wix.vscode-import-cost"
+  "waderyan.gitblame"
+  "dbaeumer.vscode-eslint"
 )
 
 
 # ==================================================================
 # SHELL
 # ==================================================================
-
-echo "Making zsh the default shell"
-chsh -s /usr/local/bin/zsh
 
 
 # ==================================================================
@@ -168,12 +165,14 @@ for homebrew_cask_app in "${homebrew_cask_apps[@]}"; do
   brew cask install "$homebrew_cask_app"
 done
 
-echo "Open Atom"
-open -a atom
+echo "Installing VSCode Packages"
+for vscode_package in "${vscode_packages[@]}"; do
+  code --install-extension  install "$vscode_package"
+done
 
-echo "Installing Atom Packages"
-for atom_package in "${atom_packages[@]}"; do
-  apm install "$atom_package"
+echo "Installing VSCode-Insiders Packages"
+for vscode_package in "${vscode_packages[@]}"; do
+  code-insiders --install-extension  install "$vscode_package"
 done
 
 echo "Installing Mac App Store apps"

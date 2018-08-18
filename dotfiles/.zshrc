@@ -27,10 +27,11 @@ alias grep='grep -I --color=auto --exclude-dir={.git,node_modules,build,lib,.nex
 alias ls='ls -G'
 alias less='less -R'
 alias g='git'
-alias ..='cd ..'
-alias ....='cd ..; cd ..'
+alias damnit='git reset head --hard'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias gclean='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+alias c='code-insiders'
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source ~/.rvm/scripts/rvm
 export PS1="%d: "

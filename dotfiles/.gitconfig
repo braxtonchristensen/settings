@@ -3,13 +3,14 @@
   email = braxton.christensen@gmail.com
   useconfigonly = true
 [github]
-  user = braxtonchristensen
+  user = Braxton-Christensen
 [commit]
   verbose = true
+	template = /Users/braxtonchristensen/.gitmessage.txt
 [push]
   default = simple
 [core]
-  editor = atom
+	editor = code-insiders --wait
 [log]
   date = relative
 [help]
@@ -67,3 +68,6 @@
   selected = normal
   separator = red bold
   linenumber = normal
+[domoapps]
+	user = braxton.christensen
+	token = 895959283587793b313fa25e23374ec5bb17a989
