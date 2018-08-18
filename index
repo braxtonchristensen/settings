@@ -14,7 +14,6 @@ homebrew_packages=(
   "node"
   "vim"
   "yarn"
-  "zsh"
   "openssl"
   "rethinkdb"
   "mongodb"
@@ -38,6 +37,7 @@ homebrew_cask_apps=(
   "hyper"
   "iterm2"
   "rescuetime"
+  "iterm2"
   "flux"
   "visual-studio-code-insiders"
   "marshallofsound-google-play-music-player"
@@ -67,6 +67,10 @@ vscode_packages=(
 # ==================================================================
 # SHELL
 # ==================================================================
+
+echo "Making zsh the default shell"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s /usr/local/bin/zsh
 
 
 # ==================================================================
